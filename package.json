@@ -8,10 +8,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sgruzdov/skidki-online.git"
-  },
   "author": "Sergey Gruzdov <s.gruzdov-fl@yandex.by>",
   "license": "ISC",
   "bugs": {
