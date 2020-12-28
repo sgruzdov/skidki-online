@@ -172,14 +172,14 @@
             }
         })
 
-        const styleBac = i => $items_image_wrap[i].classList.remove('loading')
-        for(let i = 0; i < $items_image_wrap.length; i++) $items_image[i].addEventListener('load', e => styleBac(i))
+        // const styleBac = i => $items_image_wrap[i].classList.remove('loading')
+        // for(let i = 0; i < $items_image_wrap.length; i++) $items_image[i].addEventListener('load', e => styleBac(i))
 
-        function removeListener() {
-            for(let i = 0; i < $items_image_wrap.length; i++) $items_image[i].removeEventListener('load', e => styleBac(i))
-        }
+        // function removeListener() {
+        //     for(let i = 0; i < $items_image_wrap.length; i++) $items_image[i].removeEventListener('load', e => styleBac(i))
+        // }
 
-        window.addEventListener('load', removeListener)
+        // window.addEventListener('load', removeListener)
     </script>
 </body>
 </html>

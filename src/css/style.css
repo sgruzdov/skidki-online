@@ -236,11 +236,6 @@ body {
   transition: .2s ease transform;
 }
 
-.catalog-item-image.loading {
-  background: url(../img/loader.svg) center center/cover no-repeat;
-  background-size: 20px;
-}
-
 .catalog-item-descr {
   position: relative;
   display: inline-block;
