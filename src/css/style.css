@@ -395,6 +395,7 @@ body {
   }
   .top-slider {
     margin-top: 145px;
+    height: 300px;
   }
   .catalog-items {
     -ms-grid-columns: (1fr)[2];
@@ -436,6 +437,7 @@ body {
   }
   .top-slider {
     margin-top: 146px;
+    height: 250px;
   }
   .catalog-items {
     -ms-grid-columns: 1fr;
@@ -446,6 +448,12 @@ body {
 @media (max-width: 374px) {
   .header-top-code {
     font-size: 13px;
+  }
+  .catalog {
+    margin: 50px 0;
+  }
+  .catalog-title {
+    font-size: 20px;
   }
   .footer-top {
     font-size: 12px;

@@ -372,6 +372,7 @@ body {
 
     .top-slider {
         margin-top: 145px;
+        height: 300px;
     }
 
     .catalog {
@@ -417,6 +418,7 @@ body {
 
     .top-slider {
         margin-top: 146px;
+        height: 250px;
     }
 
     .catalog {
@@ -430,6 +432,14 @@ body {
     .header-top {
         &-code {
             font-size: 13px;
+        }
+    }
+
+    .catalog {
+        margin: 50px 0;
+
+        &-title {
+            font-size: 20px;
         }
     }
 
