@@ -105,6 +105,12 @@ body {
           align-items: center;
 }
 
+.header-top-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .header-top-search {
   position: relative;
   width: 40%;
@@ -114,7 +120,7 @@ body {
   width: 100%;
   color: var(--mainColor);
   background: #F1F7FA;
-  padding: 8px 40px 8px 15px;
+  padding: 10px 40px 10px 15px;
   border-radius: 5px;
   border: 0;
   font-size: 14px;
@@ -127,20 +133,31 @@ body {
           box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
-.header-top-search svg {
-  cursor: pointer;
-  fill: var(--yellowColor);
-  width: 22px;
+.header-top-search button {
   position: absolute;
   right: 10px;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  -webkit-transition: .3s color;
-  transition: .3s color;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 0;
+  background: none;
+  cursor: pointer;
 }
 
-.header-top-search svg:hover {
+.header-top-search button svg {
+  fill: var(--yellowColor);
+  width: 22px;
+  -webkit-transition: .3s fill;
+  transition: .3s fill;
+}
+
+.header-top-search button svg:hover {
   color: var(--activeYellowColor);
 }
 
@@ -317,7 +334,9 @@ body {
     background: var(--mainBackgroundColor);
   }
   .header-nav-logo {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .header-nav .container {
     pointer-events: none;
@@ -375,7 +394,7 @@ body {
     display: none;
   }
   .top-slider {
-    margin-top: 140px;
+    margin-top: 145px;
   }
   .catalog-items {
     -ms-grid-columns: (1fr)[2];
@@ -388,7 +407,7 @@ body {
     width: calc(100% - 25px);
   }
   .header-top {
-    height: 65px;
+    height: 70px;
   }
   .header-top .container {
     -webkit-box-pack: end;
@@ -406,14 +425,17 @@ body {
     -webkit-transition: .3s width;
     transition: .3s width;
   }
-  .header-top-search svg {
+  .header-top-search button {
     pointer-events: none;
   }
   .header-top-search.active {
     width: 100%;
   }
-  .header-top-search.active svg {
+  .header-top-search.active button {
     pointer-events: all;
+  }
+  .top-slider {
+    margin-top: 146px;
   }
   .catalog-items {
     -ms-grid-columns: 1fr;
@@ -424,6 +446,12 @@ body {
 @media (max-width: 374px) {
   .header-top-code {
     font-size: 13px;
+  }
+  .footer-top {
+    font-size: 12px;
+  }
+  .footer-bottom {
+    font-size: 14px;
   }
 }
 /*# sourceMappingURL=style.css.map */

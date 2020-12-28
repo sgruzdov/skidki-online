@@ -93,6 +93,10 @@ body {
         align-items: center;
     }
 
+    &-logo {
+        display: flex;
+    }
+
     &-search {
         position: relative;
         width: 40%;
@@ -101,7 +105,7 @@ body {
             width: 100%;
             color: var(--mainColor);
             background: #F1F7FA;
-            padding: 8px 40px 8px 15px;
+            padding: 10px 40px 10px 15px;
             border-radius: 5px;
             border: 0;
             font-size: 14px;
@@ -112,18 +116,25 @@ body {
             }
         }
 
-        svg {
-            cursor: pointer;
-            fill: var(--yellowColor);
-            width: 22px;
+        button {
             position: absolute;
             right: 10px;
             top: 50%;
             transform: translateY(-50%);
-            transition: .3s color;
+            display: flex;
+            align-items: center;
+            border: 0;
+            background: none;
+            cursor: pointer;
 
-            &:hover {
-                color: var(--activeYellowColor);
+            svg {
+                fill: var(--yellowColor);
+                width: 22px;
+                transition: .3s fill;
+    
+                &:hover {
+                    color: var(--activeYellowColor);
+                }
             }
         }
     }
@@ -296,7 +307,7 @@ body {
         background: var(--mainBackgroundColor);
 
         &-logo {
-            display: block;
+            display: flex;
         }
 
         .container {
@@ -360,7 +371,7 @@ body {
     }
 
     .top-slider {
-        margin-top: 140px;
+        margin-top: 145px;
     }
 
     .catalog {
@@ -376,7 +387,7 @@ body {
     }
 
     .header-top {
-        height: 65px;
+        height: 70px;
 
         .container {
             justify-content: flex-end;
@@ -390,7 +401,7 @@ body {
             left: 0;
             transition: .3s width;
 
-            svg {
+            button {
                 pointer-events: none;
             }
         }
@@ -398,10 +409,14 @@ body {
         &-search.active {
             width: 100%;
 
-            svg {
+            button {
                 pointer-events: all;
             }
         }
+    }
+
+    .top-slider {
+        margin-top: 146px;
     }
 
     .catalog {
@@ -415,6 +430,16 @@ body {
     .header-top {
         &-code {
             font-size: 13px;
+        }
+    }
+
+    .footer {
+        &-top {
+            font-size: 12px;
+        }
+
+        &-bottom {
+            font-size: 14px;
         }
     }
 }
