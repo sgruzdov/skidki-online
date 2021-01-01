@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/style.css">
 
     <title>Skidki-Online</title>
@@ -37,8 +38,10 @@
         </div>
     </div>
 
-    <div class="top-slider">
-
+    <div class="top-slider owl-carousel" id="top-slider">
+        <a href="#" class="top-slider-item"><img src="img/slide1.png" alt="slide"></a>
+        <a href="#" class="top-slider-item"><img src="img/slide1.png" alt="slide"></a>
+        <a href="#" class="top-slider-item"><img src="img/slide1.png" alt="slide"></a>
     </div>
 
     <div class="catalog">
@@ -135,7 +138,7 @@
                     </div>
                     <div class="catalog-item-descr">Подарки, сувениры, искусство</div>
                 </a>
-                <a href="#" class="catalog-item">
+                <a href="./pages/uslugi.html" class="catalog-item">
                     <div class="catalog-item-image loading">
                         <img src="img/logo.png" alt="image">
                     </div>
@@ -154,9 +157,27 @@
         <div class="footer-bottom">Выбирай легко онлайн, все со скидкой покупай!</div>
     </footer>
 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script>
-        const $items_image_wrap = document.querySelectorAll('.catalog-item-image')
-        const $items_image = document.querySelectorAll('.catalog-item-image img')
+
+        $(document).ready(function(){
+            $('#top-slider').owlCarousel({
+                items: 1,
+                loop: true,
+                dotsEach: true,
+                // autoplay: true,
+                autoplayTimeout: 7000,
+                dotsSpeed: 2000,
+                navSpeed: 2000,
+                dragEndSpeed: 2000,
+                autoplaySpeed: 2000,
+                autoplayHoverPause: true
+            });
+        })
+
+
         const $search_wrap = document.querySelector('.header-top-search')
         const $search_input = document.querySelector('.header-top-search input')
 
@@ -171,15 +192,6 @@
                 $search_input.value = ''
             }
         })
-
-        // const styleBac = i => $items_image_wrap[i].classList.remove('loading')
-        // for(let i = 0; i < $items_image_wrap.length; i++) $items_image[i].addEventListener('load', e => styleBac(i))
-
-        // function removeListener() {
-        //     for(let i = 0; i < $items_image_wrap.length; i++) $items_image[i].removeEventListener('load', e => styleBac(i))
-        // }
-
-        // window.addEventListener('load', removeListener)
     </script>
 </body>
 </html>
