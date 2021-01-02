@@ -363,6 +363,7 @@ body {
                     font-size: 13px;
                     color: var(--noActiveColor);
                     display: block;
+                    margin: 5px 0;
                     transition: .3s color;
 
                     &:hover {
@@ -728,6 +729,9 @@ body {
                 &.show {
                     left: 0;
                 }
+
+                &::-webkit-scrollbar { width: 4px; height: 5px;}
+                &::-webkit-scrollbar-thumb { background-color: var(--activeBorderColor); border-radius: 5px;}
     
                 &-title {
                     display: flex;

@@ -410,6 +410,7 @@ body {
   font-size: 13px;
   color: var(--noActiveColor);
   display: block;
+  margin: 5px 0;
   -webkit-transition: .3s color;
   transition: .3s color;
 }
@@ -794,6 +795,14 @@ body {
   }
   .content-out-filter.show {
     left: 0;
+  }
+  .content-out-filter::-webkit-scrollbar {
+    width: 4px;
+    height: 5px;
+  }
+  .content-out-filter::-webkit-scrollbar-thumb {
+    background-color: var(--activeBorderColor);
+    border-radius: 5px;
   }
   .content-out-filter-title {
     display: -webkit-box;

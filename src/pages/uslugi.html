@@ -130,10 +130,10 @@
                             <option value="">По дате размещения</option>
                             <option value="">По возрастанию цены</option>
                             <option value="">По убыванию цены</option>
-                            <option value="">Поставщик А-Я</option>
-                            <option value="">Поставщик Я-А</option>                            
-                            <option value="">Название А-Я</option>
-                            <option value="">Название Я-А</option>
+                            <option value="">По поставщикам А-Я</option>
+                            <option value="">По поставщикам Я-А</option>                            
+                            <option value="">По названию А-Я</option>
+                            <option value="">По названию Я-А</option>
                         </select>
                     </div>
                     <div class="content-out-result-item">
@@ -207,8 +207,14 @@
             }
         })
 
-        $filter_button_show.addEventListener('click', e => $filter_block.classList.add('show'))
-        $filter_button_hide.addEventListener('click', e => $filter_block.classList.remove('show'))
+        $filter_button_show.addEventListener('click', e => {
+            $filter_block.classList.add('show')
+            document.body.style.overflow = 'hidden';
+        })
+        $filter_button_hide.addEventListener('click', e => {
+            $filter_block.classList.remove('show')
+            document.body.style.overflow = 'auto';
+        })
     </script>
 </body>
 </html>
