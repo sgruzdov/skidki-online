@@ -20,11 +20,13 @@
 :root {
     --mainColor: #2d3436;
     --noActiveColor: #636E72;
-    --mainBgColor: #0984E3;
+    --mainBgColor: #54a7ee;
     --yellowColor: #FDCB6E;
     --activeYellowColor: #FFD200;
-    --blueColor: #0984E3;
-    --greenColor: #8BBA00;
+    --blueColor: #54a7ee;
+    --activeBlueColor: #268fdf;
+    --greenColor: #279844;
+    --activeGreenColor: #1f7735;
     --lihtBg: #F7F8FA;
     --mainBackgroundColor: #fff;
     --borderColor: #dfe6e9;
@@ -100,6 +102,10 @@ body {
 
     &-logo {
         display: flex;
+
+        img {
+            height: 51px;
+        }
     }
 
     &-search {
@@ -205,7 +211,7 @@ body {
         font-weight: bold;
         font-size: 25px;
         text-align: center;
-        color: var(--noActiveColor);
+        color: var(--blueColor);
     }
 
     &-items {
@@ -285,6 +291,7 @@ body {
     }
 
     &-title {
+        color: var(--blueColor);
         margin-top: 20px;
         font-size: 30px;
         font-weight: bold;
@@ -312,7 +319,7 @@ body {
                 span {
                     font-size: 22px;
                     font-weight: bold;
-                    color: var(--mainColor)
+                    color: var(--blueColor);
                 }
 
                 svg {
@@ -355,7 +362,7 @@ body {
                 &-title {
                     font-size: 14px;
                     font-weight: bold;
-                    color: var(--mainColor);
+                    color: var(--blueColor);
                     margin: 10px 0;
                 }
 
@@ -449,7 +456,7 @@ body {
                 transition: .3s background;
 
                 &:hover {
-                    background: darken(#0984E3, 5%);
+                    background: var(--activeBlueColor);
                 }
             }
         }
@@ -543,7 +550,7 @@ body {
     z-index: 1;
 
     &-top {
-        color: var(--greenColor);
+        color: var(--blueColor);
         background: var(--lihtBg);
         padding: 20px 10px;
         text-align: center;
@@ -551,12 +558,12 @@ body {
         font-size: 14px;
 
         a {
-            color: var(--yellowColor);
+            color: var(--greenColor);
             transition: .3s color;
             text-decoration: underline;
 
             &:hover {
-                color: var(--activeYellowColor);
+                color: var(--activeGreenColor);
             }
         }
     }

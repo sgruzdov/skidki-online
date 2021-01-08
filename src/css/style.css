@@ -20,11 +20,13 @@
 :root {
   --mainColor: #2d3436;
   --noActiveColor: #636E72;
-  --mainBgColor: #0984E3;
+  --mainBgColor: #54a7ee;
   --yellowColor: #FDCB6E;
   --activeYellowColor: #FFD200;
-  --blueColor: #0984E3;
-  --greenColor: #8BBA00;
+  --blueColor: #54a7ee;
+  --activeBlueColor: #268fdf;
+  --greenColor: #279844;
+  --activeGreenColor: #1f7735;
   --lihtBg: #F7F8FA;
   --mainBackgroundColor: #fff;
   --borderColor: #dfe6e9;
@@ -112,6 +114,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.header-top-logo img {
+  height: 51px;
 }
 
 .header-top-search {
@@ -232,7 +238,7 @@ body {
   font-weight: bold;
   font-size: 25px;
   text-align: center;
-  color: var(--noActiveColor);
+  color: var(--blueColor);
 }
 
 .catalog-items {
@@ -323,6 +329,7 @@ body {
 }
 
 .content-title {
+  color: var(--blueColor);
   margin-top: 20px;
   font-size: 30px;
   font-weight: bold;
@@ -359,7 +366,7 @@ body {
 .content-out-filter-title span {
   font-size: 22px;
   font-weight: bold;
-  color: var(--mainColor);
+  color: var(--blueColor);
 }
 
 .content-out-filter-title svg {
@@ -402,7 +409,7 @@ body {
 .content-out-filter-wrap-title {
   font-size: 14px;
   font-weight: bold;
-  color: var(--mainColor);
+  color: var(--blueColor);
   margin: 10px 0;
 }
 
@@ -516,7 +523,7 @@ body {
 }
 
 .content-out-filter-button:hover {
-  background: #0876ca;
+  background: var(--activeBlueColor);
 }
 
 .content-out-result {
@@ -622,7 +629,7 @@ body {
 }
 
 .footer-top {
-  color: var(--greenColor);
+  color: var(--blueColor);
   background: var(--lihtBg);
   padding: 20px 10px;
   text-align: center;
@@ -631,14 +638,14 @@ body {
 }
 
 .footer-top a {
-  color: var(--yellowColor);
+  color: var(--greenColor);
   -webkit-transition: .3s color;
   transition: .3s color;
   text-decoration: underline;
 }
 
 .footer-top a:hover {
-  color: var(--activeYellowColor);
+  color: var(--activeGreenColor);
 }
 
 .footer-bottom {
