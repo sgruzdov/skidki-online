@@ -97,6 +97,10 @@ body {
   transition: .3s color;
 }
 
+.catalog-item > * {
+  pointer-events: none;
+}
+
 .catalog-item:nth-child(3n+1):hover .catalog-item-title {
   color: var(--blueColor);
 }
@@ -763,6 +767,50 @@ body {
   color: var(--noActiveColor);
 }
 
+.popup-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: .2s ease margin, .4s ease-in max-height;
+  transition: .2s ease margin, .4s ease-in max-height;
+}
+
+.popup-form.active {
+  max-height: 100px;
+  margin-top: 30px;
+}
+
+.popup-form select,
+.popup-form input {
+  height: 40px;
+  width: 100%;
+  padding: 0 15px;
+  border: 1px solid var(--borderColor);
+  border-radius: 5px;
+  -webkit-transition: .3s border;
+  transition: .3s border;
+}
+
+.popup-form select:hover, .popup-form select:focus,
+.popup-form input:hover,
+.popup-form input:focus {
+  border-color: #999d9e;
+}
+
+.popup-form.active ~ #popup-form,
+.popup-form ~ #popup-submit {
+  display: none;
+}
+
+.popup-form.active ~ #popup-submit {
+  display: inline-block;
+}
+
+.popup-form-button,
 .popup button {
   font-size: 20px;
   font-weight: 500;
@@ -782,8 +830,17 @@ body {
   transition: .3s background;
 }
 
+.popup-form-button:hover,
 .popup button:hover {
   background: var(--activeBlueColor);
+}
+
+@media (max-width: 575px) {
+  .popup-form {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
 }
 
 @-webkit-keyframes showPopup {

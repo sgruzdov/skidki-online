@@ -47,11 +47,11 @@
                     <div class="catalog-item-icon"><i class="fad fa-plane-departure"></i></div>
                     <div class="catalog-item-title">Туры</div>
                 </a>
-                <a href="/bytovaya-tehnika/" class="catalog-item">
+                <a href="/bytovaya-tehnika/" class="catalog-item closed">
                     <div class="catalog-item-icon"><i class="fas fa-washer"></i></div>
                     <div class="catalog-item-title">Бытовая техника</div>
                 </a>
-                <a href="/kompyuternaya-i-ofisnaya-tehnika/" class="catalog-item">
+                <a href="/kompyuternaya-i-ofisnaya-tehnika/" class="catalog-item closed">
                     <div class="catalog-item-icon"><i class="fas fa-phone-laptop"></i></div>
                     <div class="catalog-item-title">Компьютерная и офисная техника</div>
                 </a>
@@ -76,11 +76,11 @@
                     <div class="catalog-item-title">Авто, мото и водная техника</div>
                 </a>
                 <a href="/knigi-i-multimediya/" class="catalog-item">
-                    <div class="catalog-item-icon"><i class="fad fa-plane-departure"></i></div>
+                    <div class="catalog-item-icon"><i class="fad fa-book-alt"></i></div>
                     <div class="catalog-item-title">Книги и мультимедиа</div>
                 </a>
                 <a href="/tovary-dlya-doma-i-dachi/" class="catalog-item">
-                    <div class="catalog-item-icon"><i class="fad fa-plane-departure"></i></div>
+                    <div class="catalog-item-icon"><i class="fad fa-home"></i></div>
                     <div class="catalog-item-title">Товары для дома и дачи</div>
                 </a>
                 <a href="/audio-i-videotehnika-elektronika/" class="catalog-item">
@@ -92,7 +92,7 @@
                     <div class="catalog-item-title">Оборудование и товары для ремонта</div>
                 </a>
                 <a href="/parfyumeriya-kosmetika-lekarstva/" class="catalog-item">
-                    <div class="catalog-item-icon"><i class="fad fa-plane-departure"></i></div>
+                    <div class="catalog-item-icon"><i class="fad fa-prescription-bottle-alt"></i></div>
                     <div class="catalog-item-title">Парфюмерия, косметика, лекарства</div>
                 </a>
                 <a href="/mebel/" class="catalog-item">
@@ -140,23 +140,53 @@
                     <span>Красота и уход</span>
                 </div>
             </div>
-            <button>Подать заявку</button>
+            <form action="">
+                <div class="popup-form">
+                    <select name="select">
+                        <option value="0">Выберите категорию</option>
+                        <option>Недвижимость</option>
+                        <option>Досуг</option>
+                        <option>Медицина</option>
+                    </select>
+                    <input type="email" placeholder="Email" name="email" required>
+                </div>
+                <div class="popup-form-button" id="popup-form">Подать заявку</div>
+                <button id="popup-submit" type="submit">Подать заявку</button>
+            </form>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
+        const $catalog = document.querySelector('.catalog')
+        const $catalogItems = document.querySelectorAll('.catalog-item')
+
         const $popup = document.querySelector('#category_popup')
         const $popup_bg = document.querySelector('#category_popup .popup-bg')
         const $popup_close = document.querySelector('#category_popup .popup-close')
+        const $popup_form = document.querySelector('#category_popup .popup-form')
+        const $popup_form_button = document.querySelector('#category_popup #popup-form')
+
+        $catalog.addEventListener('click', e => {
+            if(e.target.classList.contains('catalog-item') && e.target.classList.contains('closed')) {
+                e.preventDefault()
+                $popup.classList.add('show')
+            }
+        })
+
+        $popup_form_button.addEventListener('click', () => {
+            $popup_form.classList.add('active')
+        })
 
         const hidePopup = () => {
             $popup.classList.add('hide')
             $popup.classList.remove('show')
+            $popup_form.classList.remove('active')
+
             const t = setTimeout(() => {
                 $popup.classList.remove('hide')
                 clearInterval(t)
-            }, 300);
+            }, 300)
         }
 
         $popup_bg.addEventListener('click', hidePopup)
