@@ -13,7 +13,7 @@
 
 .container {
     position: relative;
-    width: 1140px;
+    width: 1140px; 
     margin: 0 auto;
 }
 
@@ -657,13 +657,24 @@ body {
 
     &-content {
         margin: 10px;
-        padding: 30px;
         max-width: 700px;
+        width: 100%;
         background: var(--mainBackgroundColor);
         border-radius: 30px;
         position: relative;
         opacity: 0;
         z-index: 1;
+        padding-bottom: 30px;
+        overflow: hidden;
+    }
+
+    &-top {
+        padding: 30px 30px 0 30px;
+        position: relative;
+    }
+
+    &-top.closed {
+        display: none;
     }
 
     &-title {
@@ -685,6 +696,7 @@ body {
         width: 35px;
         fill: var(--redColor);
         cursor: pointer;
+        z-index: 2;
     }
 
     &-about {
@@ -734,45 +746,35 @@ body {
         }
     }
 
-    &-form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 20px;
-        max-height: 0;
-        overflow: hidden;
-        transition: .2s ease margin, .4s ease-in max-height;
-
-        &.active {
-            max-height: 100px;
-            margin-top: 30px;
-        }
-
-        select,
-        input {
-            height: 40px;
-            width: 100%;
-            padding: 0 15px;
-            border: 1px solid var(--borderColor);
-            border-radius: 5px;
-            transition: .3s border;
-
-            &:hover,
-            &:focus {
-                border-color: #999d9e;
-            }
-        }
+    &-loading {
+        display: none;
+        position: relative;
+        margin-top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
     }
 
-    &-form.active ~ #popup-form,
-    &-form ~ #popup-submit {
+    &-loading.active {
+        display: block;
+    }
+
+    &-iframe {
+        margin-top: 10px;
+        width: 100%;
+        height: 400px;
+        display: none;
+        transition: .2s ease height;
+    }
+
+    &-iframe.active {
+        display: block;
+    }
+
+    &-iframe.active ~ #popup-iframe {
         display: none;
     }
 
-    &-form.active ~ #popup-submit {
-        display: inline-block;
-    }
-
-    &-form-button,
     button {
         font-size: 20px;
         font-weight: 500;
@@ -797,9 +799,8 @@ body {
 
 @media(max-width: 575px) {
     .popup {
-        &-form {
-            grid-template-columns: 1fr;
-            grid-gap: 10px;
+        &-iframe {
+            height: 500px;
         }
     }
 }
