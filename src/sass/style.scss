@@ -797,6 +797,58 @@ body {
     }
 }
 
+#redirect_popup {
+    .popup-title {
+        padding: 0;
+        text-align: center;
+    }
+
+    .popup-about {
+        color: var(--redColor);
+    }
+
+    .popup-content {
+        max-width: 600px;
+    }
+
+    .popup-about {
+        text-align: center;
+    }
+
+    .popup-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        left: 0;
+        transform: translateX(0);
+        width: 182px;
+    }
+
+    button:first-child {
+        margin-right: 5px;
+    }
+}  // Для редиректа
+
+@media(max-width: 424px) {
+    #redirect_popup {
+        .popup-top {
+            padding: 20px 20px 0 20px;
+        }
+        .popup-content {
+            padding-bottom: 20px;
+        }
+
+        button {
+            font-size: 14px;
+            width: 135px;
+            padding: 10px 15px;
+        }
+    }
+}  // Для редиректа
+
 @media(max-width: 575px) {
     .popup {
         &-iframe {

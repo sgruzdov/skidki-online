@@ -833,6 +833,60 @@ body {
   background: var(--activeBlueColor);
 }
 
+#redirect_popup .popup-title {
+  padding: 0;
+  text-align: center;
+}
+
+#redirect_popup .popup-about {
+  color: var(--redColor);
+}
+
+#redirect_popup .popup-content {
+  max-width: 600px;
+}
+
+#redirect_popup .popup-about {
+  text-align: center;
+}
+
+#redirect_popup .popup-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#redirect_popup button {
+  left: 0;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  width: 182px;
+}
+
+#redirect_popup button:first-child {
+  margin-right: 5px;
+}
+
+@media (max-width: 424px) {
+  #redirect_popup .popup-top {
+    padding: 20px 20px 0 20px;
+  }
+  #redirect_popup .popup-content {
+    padding-bottom: 20px;
+  }
+  #redirect_popup button {
+    font-size: 14px;
+    width: 135px;
+    padding: 10px 15px;
+  }
+}
+
 @media (max-width: 575px) {
   .popup-iframe {
     height: 500px;
